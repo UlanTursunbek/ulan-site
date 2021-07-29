@@ -16,6 +16,6 @@ const Contacts = () => {
 export default Contacts;
 
 const StyledInfo = styled.div`
-  animation: 2s ${bounceAnimation};
+  /* animation: 2s ${bounceAnimation}; */
 `;
 

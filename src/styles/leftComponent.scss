@@ -1,34 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .left-container {
   width: 128px;
+  font-family: "Bebas Neue";
 }
 .title {
   width: 100%;
-  height: 100vh;
-  background-color: aquamarine;
+  height: 100%;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 64px 0;
+  .resume {
+    border: solid 1px gray;
+    background-color: white;
+  }
+  .theme-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px gray;
+    button {
+      border-style: none;
+      width: 16px;
+      height: 16px;
+      &:hover {
+        height: 64px;
+        transition: 0.5s ease-out;
+      }
+    }
+    .white {
+      background-color: white;
+    }
+    .black {
+      background-color: black;
+    }
+    .yellow {
+      background-color: yellow;
+    }
+  }
 }
-
+.logo {
+  font-size: 64px;
+}
+.logo {
+  font-size: 32px;
+}
 
 .nav-links {
   height: 40vh;
-  padding: 16px 0;
+  padding: 8px 0;
   display: flex;
   flex-direction: column;
   font-family: "Bebas Neue";
   display: flex;
   justify-content: center;
+  align-items: start;
 }
 
 .link {
   font-size: 16px;
   text-decoration: none;
   color: black;
-  padding: 16px;
+  // padding: 16px;
   background: none;
   border: none;
+  &:hover {
+    background-color: burlywood;
+    transition: 1s ease-out;
+  }
 }

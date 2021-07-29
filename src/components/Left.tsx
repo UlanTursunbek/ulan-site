@@ -7,7 +7,10 @@ const LeftComponent = () => {
   const dispatch = useAppDispatch();
   return (
     <div className="title">
-      <div>logo</div>
+      <div>
+        <div className="logo">UT</div>
+        <div className="logo-title">web developer</div>
+      </div>
       <div className="nav-links">
         <button
           className="link"
@@ -34,12 +37,12 @@ const LeftComponent = () => {
           {routes.CONTACTS}
         </button>
       </div>
-      <div>
-        <button>black</button>
-        <button>white</button>
-        <button>yellow</button>
-        <button>resume</button>
+      <div className="theme-buttons">
+        <button type="button" className="white"></button>
+        <button type="button" className="black"></button>
+        <button type="button" className="yellow"></button>
       </div>
+      <button className="resume">resume</button>
       <div>social links</div>
     </div>
   );
