@@ -13,19 +13,19 @@ const bounceAnimation = keyframes`${bounce}`;
 const InfoComponent = () => {
   const { route } = useAppSelector((state) => state.route);
   return (
-    <StyledInfo>
+    // <StyledInfo>
       <div className="info">
         {route === routes.ABOUT && <AboutComponent />}
         {route === routes.EXPERIENCE && <Experience />}
         {route === routes.TOOLS && <Tools />}
         {route === routes.CONTACTS && <Contacts />}
       </div>
-    </StyledInfo>
+    // </StyledInfo>
   );
 };
 
 export default InfoComponent;
 
-const StyledInfo = styled.div`
-  animation: 1s ${bounceAnimation};
-`;
+// const StyledInfo = styled.div`
+//   animation: 1s ${bounceAnimation};
+// `;

@@ -2,16 +2,15 @@
 .left-container {
   width: 128px;
   font-family: "Bebas Neue";
+  height: 100%;
 }
 .title {
-  width: 100%;
-  height: 100%;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 64px 0;
+  width: 128px;
   .resume {
     border: solid 1px gray;
     background-color: white;
@@ -21,6 +20,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     border: solid 1px gray;
     button {
       border-style: none;
@@ -42,22 +42,29 @@
     }
   }
 }
-.logo {
+
+.logo-container {
   font-size: 64px;
-}
-.logo {
-  font-size: 32px;
+  font-family: "Bebas Neue";
+  text-align: center;
+  padding: 32px 0;
+  .logo {
+  }
+  .logo-title {
+    font-size: 16px;
+  }
 }
 
 .nav-links {
-  height: 40vh;
   padding: 8px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-family: "Bebas Neue";
   display: flex;
-  justify-content: center;
-  align-items: start;
+  transform: rotate(-90deg);
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 0 32px;
 }
 
 .link {

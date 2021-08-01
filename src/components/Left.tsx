@@ -7,7 +7,7 @@ const LeftComponent = () => {
   const dispatch = useAppDispatch();
   return (
     <div className="title">
-      <div>
+      <div className="logo-container">
         <div className="logo">UT</div>
         <div className="logo-title">web developer</div>
       </div>
@@ -43,7 +43,6 @@ const LeftComponent = () => {
         <button type="button" className="yellow"></button>
       </div>
       <button className="resume">resume</button>
-      <div>social links</div>
     </div>
   );
 };
