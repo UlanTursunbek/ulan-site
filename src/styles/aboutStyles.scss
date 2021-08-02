@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap");
 
 .info {
   width: 100%;
   height: 100%;
-  background-color: rgba(174, 30, 210, 0.801);
+  background-color: black;
   font-family: "Bebas Neue";
 }
 
@@ -12,13 +13,70 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px;
+  // padding: 32px;
   .top-row {
-  display: flex;
+    width: 80%;
+    display: flex;
+    position: absolute;
     justify-content: space-between;
+    z-index: 10;
+    color: white;
+    font-size: 32px;
+    &-title {
+      padding: 16px;
+    }
+    .links {
+      color: white;
+            padding: 16px;
 
+      a {
+        margin-left: 8px;
+      }
+    }
   }
-.bot-row {
-    // padding-bottom: 32px;
+  .mid-row {
+    display: flex;
+    &-left {
+      width: 256px;
+      height: 100vh;
+      // background-color: brown;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-right {
+      font-family: "Georama", sans-serif;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      h3 {
+        font-weight: 400;
+        font-size: 128px;
+        padding-bottom: 32px;
+        color: white;
+      }
+      p {
+        font-weight: 300;
+        line-height: 32px;
+        border-top: 1px solid white;
+        font-family: "Georama", sans-serif;
+        color: white;
+        padding: 32px;
+        font-size: 24px;
+      }
+    }
+  }
+  .bot-row {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    bottom: 0;
+    color: white;
   }
 }
