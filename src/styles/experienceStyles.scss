@@ -12,7 +12,7 @@ display: flex;
   .left-column {
     width: 256px;
     height: 100%;
-    background-color: yellowgreen;
+    background-color: black;
     padding: 32px;
     display: flex;
     justify-content: center;
@@ -20,13 +20,21 @@ display: flex;
     flex-direction: column;
     &-projects {
       width: 100%;
-
+      height: 100%;
       .projects-title {
         width: 100%;
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
         font-weight: 400;
         font-size: 24px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+      }
+      .desription {
+        li {
+          font-size: 14px;
+          margin-top: 8px;
+        }
       }
     }
   }
@@ -35,6 +43,7 @@ display: flex;
       overflow-y: hidden;
       overflow-x: hidden;
     .right-column-projects {
+      scroll-snap-type: y mandatory;
       width: 100%;
       height: 25%;
       overflow-y: scroll;
@@ -44,6 +53,8 @@ display: flex;
       img {
         height: 25%;
         width: 100%;
+        scroll-snap-align: center;
+
       }
     }
   }
