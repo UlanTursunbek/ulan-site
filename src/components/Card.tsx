@@ -8,23 +8,24 @@ import Tools from "./ToolsComponent";
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
 import jobRekom from "../static/jobRekom.png";
-
+import { IExperience } from "./types";
 const bounceAnimation = keyframes`${bounce}`;
 
-const CardComponent = () => {
+const CardComponent = (props: IExperience) => {
   const { route } = useAppSelector((state) => state.route);
   return (
     // <StyledInfo>
     <div className="card">
-      <img src={jobRekom} alt="" />
+      <img src={props.src} alt={props.alt} />
       <div className="card-info">
-        <h4 className="card-title">Freelance</h4>
-        <span className="card-years">february 2020 - february 2021</span>
-        <ol>
-          <li>1sdfsd</li>
+        <h4 className="card-title">{props.title}</h4>
+        <span className="card-years">{props.period}</span>
+        {/* <ol> */}
+          {props.work.map((it) => <li key={it}>{it}</li>)}
+          {/* <li>1sdfsd</li>
           <li>2sdfs</li>
-          <li>3sdfs</li>
-        </ol>
+          <li>3sdfs</li> */}
+        {/* </ol> */}
       </div>
     </div>
     // </StyledInfo>
