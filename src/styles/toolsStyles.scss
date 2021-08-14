@@ -11,15 +11,8 @@
     top: 10px;
     left: 300px;
   }
-  &-card {
+  &-container {
     display: flex;
-    border-bottom: 1px solid #000;
-    align-items: center;
-    padding-bottom: 16px;
-    img {
-      width: 64px;
-      height: 64px;
-      padding-right: 16px;
-    }
+    flex-wrap: wrap;
   }
 }

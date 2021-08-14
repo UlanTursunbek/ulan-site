@@ -5,3 +5,9 @@ export interface IExperience {
   src: string;
   alt: string;
 }
+
+export interface ITools {
+  title: string;
+  src: string;
+  alt: string;
+}

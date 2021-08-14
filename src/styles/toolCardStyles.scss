@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,200;0,300;0,400;1,100&display=swap");
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  // height: 400px;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  img {
+    width: 64px;
+    height: 64px;
+  }
+  .tool-card-info {
+    font-family: "Georama", sans-serif;
+    margin-top: 16px;
+
+  }
+  .tool-card-description {
+    font-size: 12px;
+    margin-top: 16px;
+  }
+}
