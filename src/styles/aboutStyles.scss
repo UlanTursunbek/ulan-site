@@ -1,82 +1,125 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap");
 
-.info {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  font-family: "Bebas Neue";
-}
+// .about {
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   // padding: 32px;
+//   .top-row {
+//     width: 80%;
+//     display: flex;
+//     position: absolute;
+//     justify-content: space-between;
+//     z-index: 10;
+//     color: white;
+//     font-size: 32px;
+//     &-title {
+//       padding: 16px;
+//     }
+//     .links {
+//       color: white;
+//             padding: 16px;
+
+//       a {
+//         margin-left: 8px;
+//       }
+//     }
+//   }
+//   .mid-row {
+//     display: flex;
+//     &-left {
+//       width: 256px;
+//       height: 100vh;
+//       // background-color: brown;
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//     }
+//     &-right {
+//       font-family: "Georama", sans-serif;
+
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+//       padding: 32px;
+//       h3 {
+//         font-weight: 400;
+//         font-size: 128px;
+//         padding-bottom: 32px;
+//         color: white;
+//       }
+//       p {
+//         font-weight: 300;
+//         line-height: 32px;
+//         border-top: 1px solid white;
+//         font-family: "Georama", sans-serif;
+//         color: white;
+//         padding: 32px;
+//         font-size: 24px;
+//       }
+//     }
+//   }
+//   .bot-row {
+//     position: absolute;
+//     display: flex;
+//     justify-content: space-between;
+//     z-index: 10;
+//     bottom: 0;
+//     color: white;
+//   }
+// }
 
 .about {
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  // padding: 32px;
-  .top-row {
-    width: 80%;
-    display: flex;
-    position: absolute;
-    justify-content: space-between;
-    z-index: 10;
-    color: white;
-    font-size: 32px;
-    &-title {
-      padding: 16px;
-    }
-    .links {
-      color: white;
-            padding: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  .img-container {
+    position: relative;
 
-      a {
-        margin-left: 8px;
-      }
+    width: 256px;
+    height: 256px;
+    margin-right: 32px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
   }
-  .mid-row {
+  .text-container {
+    position: relative;
+    font-family: "Georama", sans-serif;
+
     display: flex;
-    &-left {
-      width: 256px;
-      height: 100vh;
-      // background-color: brown;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    h3 {
+      font-weight: 400;
+      font-size: 64px;
+      color: black;
+      padding-bottom: 16px;
     }
-    &-right {
+    p {
+      padding-top: 16px;
+
+      font-weight: 300;
+      line-height: 24px;
+      border-top: 1px solid black;
       font-family: "Georama", sans-serif;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 32px;
-      h3 {
-        font-weight: 400;
-        font-size: 128px;
-        padding-bottom: 32px;
-        color: white;
-      }
-      p {
-        font-weight: 300;
-        line-height: 32px;
-        border-top: 1px solid white;
-        font-family: "Georama", sans-serif;
-        color: white;
-        padding: 32px;
-        font-size: 24px;
+      color: black;
+      font-size: 16px;
+      span {
+        color: rgb(13, 141, 98);
       }
     }
-  }
-  .bot-row {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-    bottom: 0;
-    color: white;
   }
 }

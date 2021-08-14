@@ -4,6 +4,7 @@ import ImgJobKovan from "../static/jobKovan.png";
 import ImgJobSkillCrucial from "../static/jobSkillCrucial.png";
 import ImgJobArgenta from "../static/jobArgenta.png";
 import ImgJobRekom from "../static/jobRekom.png";
+import CardComponent from "./Card";
 
 interface IExperience {
    title: string; work: string[];
@@ -60,11 +61,18 @@ const projectImages = [
     alt: "argenta",
   },
 ];
+      {
+        /* http://www.zavod-rekom.kz/ */
+      }
+
 const Experience = () => {
   const { route } = useAppSelector((state) => state.route);
   return (
     <div className="experience">
-      <div className="left-column">
+      {experienceArray.map((it) => {
+        return <CardComponent title={it.title} work={it.work}/>;
+      })}
+      {/* <div className="left-column">
         {experienceArray.map((it) => {
           return (
             <div className="left-column-projects">
@@ -78,7 +86,6 @@ const Experience = () => {
           );
         })}
       </div>
-      {/* http://www.zavod-rekom.kz/ */}
       <div className="right-column">
         {projectImages.map((it) => {
           return (
@@ -89,7 +96,7 @@ const Experience = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };

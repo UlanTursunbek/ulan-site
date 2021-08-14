@@ -1,0 +1,16 @@
+.card {
+  width: 400px;
+  height: 300px;
+  background-color: aquamarine;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 8px;
+  display: flex;
+  img {
+    position: relative;
+    width: 50%;
+    height: 100%;
+  }
+  .card-info {
+    position: relative;
+  }
+}

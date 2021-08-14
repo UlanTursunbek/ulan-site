@@ -6,7 +6,7 @@ const AboutComponent = () => {
   // const { route } = useAppSelector((state) => state.route);
   return (
     <div className="about">
-      <div className="top-row">
+      {/* <div className="top-row">
         <div className="top-row-title">ULAN TURSUNBEK</div>
         <div className="links">
           <a
@@ -30,7 +30,7 @@ const AboutComponent = () => {
           <img src={AvatarUlan} alt="avatar-ulan" />
         </div>
         <div className="mid-row-right">
-          <h3>Hello!</h3>
+          <h3>Hello World!</h3>
           <p>
             Greetings everyone. <br />
             My name is Ulan, I'm front-end developer located in Bishkek,
@@ -53,6 +53,21 @@ const AboutComponent = () => {
         Well-organizated person, problem solver, huge fan of FC Arsenal, London.
         Interested in the entire frontend spectrum
       </p> */}
+      <div className="img-container">
+        <img src={AvatarUlan} alt="avatar-ulan" />
+      </div>
+      <div className="text-container">
+        <h3>Hello World!</h3>
+        <p>
+          Greetings everyone. <br />
+          My name is <span>Ulan</span>, I'm <span>front-end developer</span>{" "}
+          located in Bishkek, Kyrgyzstan. <br />I have a serious passion in
+          converting design and ideas to UI and <br /> creating intuitive,
+          dynamic user experience <br /> Well-organizated person, problem
+          solver, huge fan of FC Arsenal, London. <br /> Interested in the
+          entire frontend spectrum
+        </p>
+      </div>
     </div>
   );
 };
