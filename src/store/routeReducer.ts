@@ -3,11 +3,13 @@ import { RootState } from ".";
 import { routes } from "../constants";
 
 export interface RouteState {
-  route: string
+  route: string;
+  theme: string;
 }
 
 const initialState: RouteState = {
   route: routes.ABOUT,
+  theme: "light"
 }
 export const routeReducerSlice = createSlice({
   name: "routeSlice",
@@ -15,12 +17,17 @@ export const routeReducerSlice = createSlice({
   reducers: {
     setRoute: (state, action: PayloadAction<string>) => {
       state.route = action.payload;
+    },
+    setTheme: (state, action: PayloadAction<string>) => {
+      state.theme = action.payload;
     }
   },
 });
 
-export const { setRoute } = routeReducerSlice.actions
+export const { setRoute, setTheme } = routeReducerSlice.actions;
 
-export const selectCount = (state: RootState) => state.route.route;
+export const selectRoute = (state: RootState) => state.route.route;
+export const selectTheme = (state: RootState) => state.route.theme;
+
 
 export default routeReducerSlice.reducer

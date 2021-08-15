@@ -1,20 +1,20 @@
 import { useAppSelector } from "../store/hooks";
-import "../styles/aboutStyles.scss";
+import "../styles/about.scss";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import AvatarUlan from "../static/avatarUlan.png";
-import { BounceInDownDiv, BounceInRightDiv, FlipDiv } from "./StyledAnimations";
+import { AboutContainer, BounceInDownDiv, BounceInRightDiv, FlipDiv } from "./StyledAnimations";
 
 const AboutComponent = () => {
   // const { route } = useAppSelector((state) => state.route);
   return (
-    <div className="about">
+    <AboutContainer className="about">
       <div className="img-container">
-        <BounceInDownDiv delay={"2s"}>
+        <BounceInDownDiv delay={"1.5s"}>
           <img src={AvatarUlan} alt="avatar-ulan" />
         </BounceInDownDiv>
       </div>
       <div className="text-container">
-        <BounceInRightDiv delay={"2s"}>
+        <BounceInRightDiv delay={"1.5s"}>
           <h3>Hello World!</h3>
           <p>
             Greetings everyone. <br />
@@ -27,7 +27,7 @@ const AboutComponent = () => {
           </p>
         </BounceInRightDiv>
       </div>
-    </div>
+    </AboutContainer>
   );
 };
 

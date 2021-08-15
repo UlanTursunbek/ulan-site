@@ -11,3 +11,13 @@ export interface ITools {
   src: string;
   alt: string;
 }
+
+export interface IColorsPallete {
+  spaceCadet: string;
+  manatee: string;
+  aliceBlue: string;
+  imperialRed: string;
+  amanarathRed: string;
+  slateGray: string;
+}
+

@@ -1,4 +1,4 @@
-import { IExperience, ITools } from "../components/types";
+import { IExperience, ITools, IColorsPallete } from "../components/types";
 import LogoReact from "../static/logos/LogoReact.svg";
 import LogoHTML5 from "../static/logos/LogoHTML5.svg";
 import ImgJobKovan from "../static/jobKovan.png";
@@ -111,3 +111,40 @@ export const toolsArr: ITools[] = [
     alt: "React logo",
   },
 ];
+
+export const colorsPallete: IColorsPallete = {
+  spaceCadet: "#2B2D42",
+  manatee: "#8D99AE",
+  aliceBlue: "#EDF2F4",
+  imperialRed: "#EF233C",
+  amanarathRed: "#D90429",
+  slateGray: "#647890",
+};
+
+export const lightTheme = {
+  backgroundLogo: colorsPallete.manatee,
+  backgroundNav: colorsPallete.spaceCadet,
+  hoverBackground: colorsPallete.imperialRed,
+  backgroundMain: colorsPallete.aliceBlue,
+  colorMain: colorsPallete.spaceCadet,
+  colorLogo: colorsPallete.aliceBlue,
+  colorText: colorsPallete.aliceBlue,
+  hoverColor: colorsPallete.aliceBlue,
+};
+export const darkTheme = {
+  backgroundLogo: colorsPallete.amanarathRed,
+  colorLogo: colorsPallete.aliceBlue,
+  backgroundNav: colorsPallete.slateGray,
+  backgroundMain: colorsPallete.spaceCadet,
+  colorMain: colorsPallete.aliceBlue,
+  colorText: colorsPallete.spaceCadet,
+  hoverBackground: colorsPallete.imperialRed,
+  hoverColor: colorsPallete.aliceBlue,
+};
+
+export const navLinks = [
+  "about",
+  "experience",
+  "tools",
+  "contacts"
+]
