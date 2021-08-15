@@ -112,6 +112,7 @@ export const NavigationContainer = styled.div`
 `;
 
 export const AboutContainer = styled.div`
+  transition: background-color 1s, color 1s;
   background-color: ${(props) => props.theme.backgroundMain};
   .text-container {
     h3 {

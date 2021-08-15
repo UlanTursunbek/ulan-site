@@ -1,10 +1,22 @@
 import { IExperience, ITools, IColorsPallete } from "../components/types";
-import LogoReact from "../static/logos/LogoReact.svg";
-import LogoHTML5 from "../static/logos/LogoHTML5.svg";
 import ImgJobKovan from "../static/jobKovan.png";
 import ImgJobSkillCrucial from "../static/jobSkillCrucial.png";
 import ImgJobArgenta from "../static/jobArgenta.png";
 import ImgJobRekom from "../static/jobRekom.png";
+import logoReact from "../static/logos/logoReact.svg";
+import logoCSS from "../static/logos/logoCSS.svg";
+import logoGIT from "../static/logos/logoGIT.svg";
+import logoHTML5 from "../static/logos/logoHTML5.svg";
+import logoJest from "../static/logos/logoJest.svg";
+import logoJS from "../static/logos/logoJS.svg";
+import logoMobx from "../static/logos/logoMobx.svg";
+import logoNPM from "../static/logos/logoNPM.svg";
+import logoRedux from "../static/logos/logoRedux.svg";
+import logoSASS from "../static/logos/logoSASS.svg";
+import logoTypescript from "../static/logos/logoTypescript.svg";
+import logoNode from "../static/logos/logoNode.svg";
+
+
 
 export const routes = {
   ABOUT: "ABOUT",
@@ -61,54 +73,64 @@ export const experienceArray: IExperience[] = [
 
 export const toolsArr: ITools[] = [
   {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
+    title: "CSS",
+    src: logoCSS,
+    alt: "css logo",
+  },
+  {
+    title: "GIT",
+    src: logoGIT,
+    alt: "git logo",
   },
   {
     title: "HTML5",
-    src: LogoHTML5,
+    src: logoHTML5,
     alt: "html logo",
   },
   {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
+    title: "Jest",
+    src: logoJest,
+    alt: "jest logo",
+  },
+  {
+    title: "JavaScript (>es6)",
+    src: logoJS,
+    alt: "js logo",
+  },
+  {
+    title: "Mobx",
+    src: logoMobx,
+    alt: "mobx logo",
+  },
+  {
+    title: "npm",
+    src: logoNPM,
+    alt: "npm logo",
+  },
+  {
+    title: "Redux",
+    src: logoRedux,
+    alt: "redux logo",
+  },
+  {
+    title: "SASS",
+    src: logoSASS,
+    alt: "sass logo",
+  },
+  {
+    title: "Typescript",
+    src: logoTypescript,
+    alt: "typescript logo",
   },
   {
     title: "React",
-    src: LogoReact,
-    alt: "React logo",
+    src: logoReact,
+    alt: "react logo",
   },
   {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
-  },
-  {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
-  },
-  {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
-  },
-  {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
-  },
-  {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
-  },
-  {
-    title: "React",
-    src: LogoReact,
-    alt: "React logo",
+    title: "NodeJS",
+    src: logoNode,
+    alt: "node logo",
   },
 ];
 
