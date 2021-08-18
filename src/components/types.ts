@@ -10,6 +10,7 @@ export interface ITools {
   title: string;
   src: string;
   alt: string;
+  delay?: string;
 }
 
 export interface IColorsPallete {

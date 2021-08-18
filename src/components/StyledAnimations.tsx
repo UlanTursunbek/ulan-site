@@ -22,6 +22,7 @@ interface IBounceInRightDiv {
 export const BounceInRightDiv = styled.div<IBounceInRightDiv>`
   animation-duration: ${(props) => props.delay || "1.5s"};
   animation-name: ${bounceInRightAnimation};
+  width: 100%;
 `;
 
 export const BounceInDownDiv = styled.div<IBounceInRightDiv>`
@@ -32,6 +33,7 @@ export const BounceInDownDiv = styled.div<IBounceInRightDiv>`
 export const BounceInLeftDiv = styled.div<IBounceInRightDiv>`
   animation-duration: ${(props) => props.delay || "1.5s"};
   animation-name: ${bounceInLeftAnimation};
+  width: 100%;
 `;
 
 export const BounceInDownLine = styled.div<IBounceInRightDiv>`
@@ -64,9 +66,13 @@ export const NavigationContainer = styled.div`
     justify-content: center;
     padding: 16px;
     background: ${(props) => props.theme.backgroundLogo};
-
+    text-decoration: none;
+    color: ${(props) => props.theme.colorLogo};
+    &:hover {
+      background-color: ${(props) => props.theme.hoverBackground};
+      color: ${(props) => props.theme.hoverColor};
+    }
     .logo {
-      color: ${(props) => props.theme.colorLogo};
       font-size: 64px;
     }
   }

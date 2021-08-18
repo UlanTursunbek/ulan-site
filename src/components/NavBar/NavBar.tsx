@@ -20,28 +20,16 @@ const NavBar = () => {
   console.log(theme);
   return (
     <NavigationContainer>
-      <div className="logo-container">
+      <Link to="/" className="logo-container">
         <div className="logo">UT</div>
         <div className="logo-title">web developer</div>
-      </div>
+      </Link>
       <div className="nav-links">
         {navLinks.map((it) => (
           <Link className="link" to={`/${it}`}>
             {it}
           </Link>
         ))}
-        {/* <Link className="link" to="/about">
-        About
-      </Link>
-      <Link className="link" to="/experience">
-        experience
-      </Link>
-      <Link className="link" to="/tools">
-        tools
-      </Link>
-      <Link className="link" to="/contacts">
-        contacts
-      </Link> */}
       </div>
       <button
         type="button"

@@ -20,14 +20,9 @@ const CardComponent = (props: IExperience) => {
         <div className="card-info">
           <h4 className="card-title">{props.title}</h4>
           <span className="card-years">{props.period}</span>
-          {/* <ol> */}
           {props.work.map((it) => (
             <li key={it}>{it}</li>
           ))}
-          {/* <li>1sdfsd</li>
-          <li>2sdfs</li>
-          <li>3sdfs</li> */}
-          {/* </ol> */}
         </div>
       </div>
     // </StyledInfo>

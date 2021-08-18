@@ -165,7 +165,6 @@ export const darkTheme = {
 };
 
 export const navLinks = [
-  "about",
   "experience",
   "tools",
   "contacts"

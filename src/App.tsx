@@ -17,30 +17,15 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <div className="main-container">
-        <Router>
+      <Router>
+        <div className="main-container">
           <NavBar />
-            <Route path="/about" component={AboutComponent} />
-            <Route path="/experience" component={Experience} />
-            <Route path="/tools" component={Tools} />
-            <Route path="/contacts" component={Contacts} />
-
-          {/* <Switch>
-            <Route path="/">
-              <AboutComponent />
-            </Route>
-            <Route path="/experience">
-              <Experience />
-            </Route>
-            <Route path="/tools">
-              <Tools />
-            </Route>
-            <Route path="/contacts">
-              <Contacts />
-            </Route>
-          </Switch> */}
-        </Router>
-      </div>
+          <Route exact path="/" component={AboutComponent} />
+          <Route path="/experience" component={Experience} />
+          <Route path="/tools" component={Tools} />
+          <Route path="/contacts" component={Contacts} />
+        </div>
+      </Router>
     </ThemeProvider>
   );
 }
