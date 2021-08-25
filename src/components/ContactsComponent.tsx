@@ -1,20 +1,15 @@
 import "../styles/contactsStyles.scss";
 import styled, { keyframes } from "styled-components";
-import { bounceInRight, bounceInDown } from "react-animations";
+import { bounceInDown } from "react-animations";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import {
-  BounceInDownLine,
-  BounceInLeftDiv,
-  BounceInRightDiv,
-} from "./StyledAnimations";
+import { device } from "../constants";
 const bounceInDownAnimation = keyframes`${bounceInDown}`;
 
 const Contacts = () => {
-  // const { route } = useAppSelector((state) => state.route);
   return (
     <StyledContactsContainer>
       <StyledContactsButtons>
@@ -44,9 +39,9 @@ export default Contacts;
 const StyledContactsButtons = styled.div`
   animation-duration: 1.5s;
   animation-name: ${bounceInDownAnimation};
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
-  margin-left: 40%;
+  /* margin-left: 40%; */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -65,6 +60,9 @@ const StyledContactsButtons = styled.div`
     justify-content: center;
     padding: 8px;
     height: 48px;
+    @media ${device.tablet} {
+      font-size: 16px;
+    }
     span {
       position: relative;
       height: 48px;
@@ -85,17 +83,11 @@ const StyledContactsButtons = styled.div`
   }
 `;
 
-const StyledContactsText = styled.div`
-  animation-duration: 1.5s;
-  animation-name: ${bounceInDownAnimation};
-  background-color: red;
-`;
-
 const StyledContactsContainer = styled.div`
-  /* animation-duration: 1.5s;
-  animation-name: ${bounceInDownAnimation}; */
-  /* background-color: red; */
   width: 100%;
   height: 100vh;
   background-color: ${(props) => props.theme.backgroundMain};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

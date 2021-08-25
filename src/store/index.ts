@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import routeReducer from "./routeReducer"
+import sampleReducer from "./sampleReducer";
 
 export const store = configureStore({
   reducer: {
-    route: routeReducer,
+    sample: sampleReducer,
   },
 });
 

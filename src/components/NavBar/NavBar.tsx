@@ -1,14 +1,13 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { selectTheme, setRoute, setTheme } from "../../store/routeReducer";
-import { lightTheme, navLinks, routes } from "../../constants/index";
-import styled from "styled-components";
+import { selectTheme, setTheme } from "../../store/sampleReducer";
+import { device, navLinks } from "../../constants/index";
 import "../../styles/navbar.scss";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { useCallback } from "react";
-import darkMode from "../static/icons/darkMode.svg";
-import lightMode from "../static/icons/lightMode.svg";
-import { Link } from "react-router-dom";
-import { BounceInDownDiv, NavigationContainer } from "../StyledAnimations";
+import { Link, NavLink } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+import { bounceInLeft } from "react-animations";
+
+const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
 
 const NavBar = () => {
   const dispatch = useAppDispatch();
@@ -17,12 +16,17 @@ const NavBar = () => {
   const handleToggleTheme = () => {
     dispatch(setTheme(theme === "light" ? "dark" : "light"));
   };
-  console.log(theme);
+  const { pathname } = window.location;
+  console.log(window.location);
+  const isActive = (pathname: string) => {
+    if (pathname === "/") return true;
+    return false;
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer isActive={isActive(pathname)}>
       <Link to="/" className="logo-container">
-        <div className="logo">UT</div>
-        <div className="logo-title">web developer</div>
+        <span className="logo">UT</span>
       </Link>
       <div className="nav-links">
         {navLinks.map((it) => (
@@ -34,34 +38,103 @@ const NavBar = () => {
       <button
         type="button"
         className="theme-button"
-        // theme={theme}
         onClick={handleToggleTheme}
       >
         {theme === "light" ? <FaMoon /> : <FaSun />}
       </button>
-      <button className="resume-button">resume</button>
+      <a
+        href="../../../public/resumeUlan.pdf"
+        className="resume-button"
+        target="_blank"
+        download
+      >
+        resume
+      </a>
     </NavigationContainer>
   );
 };
 
 export default NavBar;
-// interface IThemeButtonProps {
-//   theme: string;
-// }
-// const ThemeButton = styled.button<IThemeButtonProps>`
-//   width: 16px;
-//   height: 16px;
-//   border-style: none;
-//   span {
-//     width: 16px;
-//     height: 16px;
-//     background-image: url(${(props) =>
-//       props.theme === "light" ? darkMode : lightMode});
-//     background-size: 100%;
-//     background-color: transparent;
-//     background-repeat: no-repeat;
-//     /* pointer-events: none; */
-//   }
-// `;
+interface INavProps {
+  isActive: boolean;
+}
+const NavigationContainer = styled.div<INavProps>`
+  color: ${(props) => props.theme.colorText};
+  background: ${(props) => props.theme.backgroundNav};
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+  height: 38px;
+  justify-content: space-between;
+  align-items: center;
+  animation-duration: 1.5s;
+  animation-name: ${bounceInLeftAnimation};
+  font-family: Bebas Neue;
 
-// const Container = styled.div``;
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    background: ${({ theme }) => theme.backgroundLogo};
+    color: ${(props) => props.theme.colorLogo};
+    @media ${device.tablet} {
+      padding: 8px 10px;
+    }
+    &:hover {
+      background-color: ${(props) => props.theme.hoverBackground};
+      color: ${(props) => props.theme.hoverColor};
+    }
+    .logo {
+      font-size: 32px;
+    }
+  }
+  .nav-links {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    .link {
+      text-decoration: none;
+      padding: 16px;
+      @media ${device.tablet} {
+        padding: 8px;
+      }
+      color: ${(props) => props.theme.colorText};
+
+      &:hover {
+        background-color: ${(props) => props.theme.hoverBackground};
+        color: ${(props) => props.theme.hoverColor};
+      }
+    }
+  }
+  .theme-button {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-style: none;
+    background-color: transparent;
+    color: ${(props) => props.theme.colorText};
+    padding: 16px;
+
+    &:hover {
+      background-color: ${(props) => props.theme.hoverBackground};
+      color: ${(props) => props.theme.hoverColor};
+    }
+  }
+  .resume-button {
+    position: relative;
+    border-style: none;
+    background-color: transparent;
+    color: ${(props) => props.theme.colorText};
+    padding: 16px;
+    /* margin-bottom: 32px; */
+    text-decoration: none;
+    &:hover {
+      background-color: ${(props) => props.theme.hoverBackground};
+      color: ${(props) => props.theme.hoverColor};
+    }
+  }
+`;

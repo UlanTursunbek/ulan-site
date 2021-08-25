@@ -33,7 +33,7 @@ export const experienceArray: IExperience[] = [
       "manage states of components with Redux-Saga and Mobx",
       "redesigned UI elements using SASS according to Figma",
     ],
-    period: "April 2021 - current",
+    period: "May 2021 - current",
     src: ImgJobArgenta,
     alt: "argenta",
   },
@@ -44,7 +44,7 @@ export const experienceArray: IExperience[] = [
       "Refactoring class components to hooks for better code",
       "Redesigned authorization pages",
     ],
-    period: "April 2021 - current",
+    period: "February 2021 - April 2021",
     src: ImgJobKovan,
     alt: "argenta",
   },
@@ -55,7 +55,7 @@ export const experienceArray: IExperience[] = [
       "Carried out unit tests to discover errors and optimize loading",
       "Improving product aesthetic and UX by using Tailwind.",
     ],
-    period: "April 2021 - current",
+    period: "April 2020 - February 2021",
     src: ImgJobSkillCrucial,
     alt: "argenta",
   },
@@ -65,7 +65,7 @@ export const experienceArray: IExperience[] = [
       "transfer design from Figma to web by using Bootstrap 4",
       "integrating with third-party services and external APIs",
     ],
-    period: "April 2021 - February 2021",
+    period: "April 2021 - April 2020",
     src: ImgJobRekom,
     alt: "argenta",
   },
@@ -169,3 +169,24 @@ export const navLinks = [
   "tools",
   "contacts"
 ]
+
+const size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
+};
+
+export const device = {
+  mobileS: `(max-width: ${size.mobileS})`,
+  mobileM: `(max-width: ${size.mobileM})`,
+  mobileL: `(max-width: ${size.mobileL})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(max-width: ${size.laptop})`,
+  laptopL: `(max-width: ${size.laptopL})`,
+  desktop: `(max-width: ${size.desktop})`,
+  desktopL: `(max-width: ${size.desktop})`,
+};
