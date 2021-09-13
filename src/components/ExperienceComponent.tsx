@@ -13,7 +13,7 @@ const Experience = () => {
     <ExeperienceContainer>
       {experienceArray.map((it, index) => {
         return (
-          <CardsContainer delay={`${index + 1}s`}>
+          <CardsContainer delay={`${index + 1}s`} key={it.title}>
             <CardComponent>
               <img src={it.src} alt={it.alt} />
               <div className="card-info">

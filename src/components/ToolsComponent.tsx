@@ -17,10 +17,9 @@ const Tools = () => {
     <ToolsContainer className="tools">
       <h2 className="tools-title">Tools i've used in my work</h2>
       <div className="tools-container">
-        {toolsArr.map(it => <ToolCard
-          src={it.src}
-          title={it.title}
-          alt={it.alt} />)}
+        {toolsArr.map((it) => (
+          <ToolCard key={it.title} src={it.src} title={it.title} alt={it.alt} />
+        ))}
       </div>
     </ToolsContainer>
   );
