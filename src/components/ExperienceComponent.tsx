@@ -1,12 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { device, experienceArray } from "../constants";
-import "../styles/experienceStyles.scss";
 import { bounceInRight } from "react-animations";
 const bounceInRightAnimation = keyframes`${bounceInRight}`;
-
-// {
-//   /* http://www.zavod-rekom.kz/ */
-// }
 
 const Experience = () => {
   return (
@@ -14,7 +9,7 @@ const Experience = () => {
       {experienceArray.map((it, index) => {
         return (
           <CardsContainer delay={`${index + 1}s`} key={it.title}>
-            <CardComponent>
+            <CardComponent href={it.url} target="_blank">
               <img src={it.src} alt={it.alt} />
               <div className="card-info">
                 <h4 className="card-title">{it.title}</h4>
@@ -35,13 +30,14 @@ export default Experience;
 
 const ExeperienceContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 16px);
+  /* margin-top: 8px; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: ${(props) => props.theme.backgroundMain};
-  padding: 16px 0;
+  /* padding: 16px 0; */
 `;
 
 interface ICardsContainer {
@@ -55,19 +51,20 @@ export const CardsContainer = styled.div<ICardsContainer>`
   animation-name: ${bounceInRightAnimation};
 `;
 
-const CardComponent = styled.div`
-  min-width: 360px;
-  max-width: 768px;
+const CardComponent = styled.a`
+  text-decoration: none;
+  width: 360px;
+  max-width: 620px;
   width: 100%;
   min-height: 20vh;
   background-color: ${(props) => props.theme.backgroundNav};
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 8px;
   display: flex;
   justify-content: flex-start;
-  margin: 16px;
+  margin-top: 8px;
 
   &:hover {
+    cursor: pointer;
     transform: scale(1.01, 1.01);
     transition-duration: 500ms;
   }
@@ -75,7 +72,6 @@ const CardComponent = styled.div`
     position: relative;
     width: 40%;
     height: 100%;
-    border-radius: 8px 0 0 8px;
     @media ${device.tablet} {
       width: 0;
     }
@@ -99,6 +95,7 @@ const CardComponent = styled.div`
       margin-top: 4px;
       margin-left: 24px;
       list-style-type: circle;
+      white-space: pre;
     }
   }
 `;

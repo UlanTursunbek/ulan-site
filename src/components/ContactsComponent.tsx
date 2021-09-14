@@ -1,4 +1,3 @@
-import "../styles/contactsStyles.scss";
 import styled, { keyframes } from "styled-components";
 import { bounceInDown } from "react-animations";
 import { FaWhatsapp } from "react-icons/fa";

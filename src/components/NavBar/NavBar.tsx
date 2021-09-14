@@ -1,7 +1,6 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { selectTheme, setTheme } from "../../store/sampleReducer";
 import { device, navLinks } from "../../constants/index";
-import "../../styles/navbar.scss";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";

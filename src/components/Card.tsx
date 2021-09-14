@@ -1,4 +1,3 @@
-import "../styles/cardStyles.scss";
 import { IExperience } from "./types";
 
 const CardComponent = (props: IExperience) => {

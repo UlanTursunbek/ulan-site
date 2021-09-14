@@ -1,4 +1,3 @@
-import "../styles/toolsStyles.scss";
 import ToolCard from "./ToolCard";
 import { toolsArr } from "../constants";
 import styled, { keyframes } from "styled-components";
@@ -35,6 +34,7 @@ const ToolsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 
   .tools {
     background-color: ${(props) => props.theme.backgroundMain};
@@ -49,12 +49,11 @@ const ToolsContainer = styled.div`
       padding-bottom: 16px;
     }
     &-container {
-      overflow-y: scroll;
-
       animation-duration: 1s;
       animation-name: ${flipInXAnimation};
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
       justify-content: center;
       align-items: center;
       width: 100%;

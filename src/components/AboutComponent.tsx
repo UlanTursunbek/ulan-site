@@ -1,19 +1,24 @@
-import "../styles/about.scss";
+import { FC } from "react";
+import Typewriter from "typewriter-effect";
+import styled from "styled-components";
 import AvatarUlan from "../static/avatarUlan.png";
-import styled, { keyframes } from "styled-components";
-import { bounceInRight, bounceInDown } from "react-animations";
+import { device } from "../constants";
+import { bounceInRightAnimation } from "./styled";
 
-const bounceInRightAnimation = keyframes`${bounceInRight}`;
-const bounceInDownAnimation = keyframes`${bounceInDown}`;
-
-const AboutComponent = () => {
+const AboutComponent: FC = () => {
   return (
     <AboutContainer className="about">
-      <div className="img-container">
-        <img src={AvatarUlan} alt="avatar-ulan" />
-      </div>
+      <img src={AvatarUlan} alt="avatar-ulan" />
       <div className="text-container">
-        <h3>Hello World!</h3>
+        <Typewriter
+          options={{
+            strings: ["Hello World"],
+            autoStart: true,
+            loop: true,
+            wrapperClassName: "typer-text",
+            cursor: "|",
+          }}
+        />
         <p>
           Greetings everyone. <br />
           My name is <span>Ulan</span>, I'm <span>front-end developer</span>{" "}
@@ -30,12 +35,50 @@ const AboutComponent = () => {
 
 export default AboutComponent;
 
-export const AboutContainer = styled.div`
+const AboutContainer = styled.div`
   transition: background-color 1s, color 1s;
   background-color: ${(props) => props.theme.backgroundMain};
-  .img-container, .text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
+  img {
+    border-radius: 50%;
+    width: 256px;
+    height: 256px;
     animation-duration: 1.5s;
     animation-name: ${bounceInRightAnimation};
+    -webkit-box-shadow: 1px 1px 5px -3px #000000;
+    box-shadow: 1px 1px 5px -3px #000000;
+  }
+  .text-container {
+    animation-duration: 1.5s;
+    animation-name: ${bounceInRightAnimation};
+    margin-left: 32px;
+    font-family: "Georama", sans-serif;
+    color: ${(props) => props.theme.colorText};
+    @media ${device.tablet} {
+      margin: 16px;
+    }
+    .typer-text {
+      font-size: 32px;
+      color: ${(props) => props.theme.colorMain};
+    }
+    .Typewriter__cursor {
+      color: ${(props) => props.theme.colorMain};
+      font-size: 35px;
+      margin-top: 4px;
+    }
+    p {
+      margin-top: 16px;
+      span {
+        color: ${(props) => props.theme.hoverBackground};
+      }
+    }
   }
   .text-container {
     h3 {
@@ -45,15 +88,4 @@ export const AboutContainer = styled.div`
       color: ${(props) => props.theme.colorMain};
     }
   }
-`;
-
-export const BounceInDownDiv = styled.div`
-  animation-duration: 1.5s;
-  animation-name: ${bounceInDownAnimation};
-`;
-
-export const BounceInRightDiv = styled.div`
-  animation-duration: "1.5s";
-  animation-name: ${bounceInRightAnimation};
-  width: 100%;
 `;

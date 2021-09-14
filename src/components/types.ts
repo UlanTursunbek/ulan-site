@@ -4,6 +4,7 @@ export interface IExperience {
   period: string;
   src: string;
   alt: string;
+  url: string;
 }
 
 export interface ITools {

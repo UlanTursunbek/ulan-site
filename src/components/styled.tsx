@@ -6,10 +6,10 @@ import {
   bounceInLeft,
 } from "react-animations";
 
-const flipInXAnimation = keyframes`${flipInX}`;
-const bounceInRightAnimation = keyframes`${bounceInRight}`;
-const bounceInDownAnimation = keyframes`${bounceInDown}`;
-const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
+export const flipInXAnimation = keyframes`${flipInX}`;
+export const bounceInRightAnimation = keyframes`${bounceInRight}`;
+export const bounceInDownAnimation = keyframes`${bounceInDown}`;
+export const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
 
 export const FlipDiv = styled.div`
   animation: 1s ${flipInXAnimation};
@@ -53,4 +53,13 @@ export const AboutContainer = styled.div`
       color: ${(props) => props.theme.colorMain};
     }
   }
+`;
+
+
+
+
+export const MainContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 `;
