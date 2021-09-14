@@ -1,15 +1,7 @@
 import ToolCard from "./ToolCard";
-import { toolsArr } from "../constants";
-import styled, { keyframes } from "styled-components";
-import {
-  flipInX,
-  bounceInDown,
-} from "react-animations";
-
-const flipInXAnimation = keyframes`${flipInX}`;
-const bounceInDownAnimation = keyframes`${bounceInDown}`;
-
-
+import { device, toolsArr } from "../constants";
+import styled from "styled-components";
+import { bounceInDownAnimation, flipInXAnimation } from "./styled";
 
 const Tools = () => {
   return (
@@ -47,16 +39,24 @@ const ToolsContainer = styled.div`
       font-size: 32px;
       padding-top: 32px;
       padding-bottom: 16px;
+      color: ${(props) => props.theme.colorMain};
+
+      @media ${device.tablet} {
+        font-size: 24px;
+      }
     }
     &-container {
       animation-duration: 1s;
       animation-name: ${flipInXAnimation};
       display: flex;
-      flex-direction: column;
-      /* flex-wrap: wrap; */
+      flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      width: 100%;
+      width: 50%;
+      @media ${device.tablet} {
+        width: 100%;
+      }
     }
   }
 `;

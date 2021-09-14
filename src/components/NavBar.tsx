@@ -1,10 +1,11 @@
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { selectTheme, setTheme } from "../../store/sampleReducer";
-import { device, navLinks } from "../../constants/index";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { selectTheme, setTheme } from "../store/sampleReducer";
+import { device, navLinks } from "../constants/index";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { bounceInLeft } from "react-animations";
+// import resume_PDF from '../../public/FE_ULAN.pdf';
 
 const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
 
@@ -40,14 +41,16 @@ const NavBar = () => {
       <button type="button" className="nav-btn" onClick={handleToggleTheme}>
         {theme === "light" ? <FaMoon /> : <FaSun />}
       </button>
-      <Link
-        to="../../../public/resumeUlan.pdf"
+      <a
+        href={"../FE_ULAN.pdf"}
+        rel="noreferrer"
         className="nav-btn"
         target="_blank"
         download
       >
+        {/* <a href={agent_file} download="MANIFEST.txt"></a> */}
         resume
-      </Link>
+      </a>
     </NavigationContainer>
   );
 };

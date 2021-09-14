@@ -1,7 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { device, experienceArray } from "../constants";
-import { bounceInRight } from "react-animations";
-const bounceInRightAnimation = keyframes`${bounceInRight}`;
+import { bounceInRightAnimation } from "./styled";
 
 const Experience = () => {
   return (
@@ -31,13 +30,11 @@ export default Experience;
 const ExeperienceContainer = styled.div`
   width: 100%;
   height: calc(100vh - 16px);
-  /* margin-top: 8px; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: ${(props) => props.theme.backgroundMain};
-  /* padding: 16px 0; */
 `;
 
 interface ICardsContainer {

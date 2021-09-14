@@ -1,7 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import { flipInXAnimation } from "./styled";
 import { ITools } from "./types";
-import { flipInX } from "react-animations";
-const flipInXAnimation = keyframes`${flipInX}`;
 
 interface IToolsComponent {
   delay?: string;
@@ -22,7 +21,6 @@ const ToolsCard = styled.div<IToolsComponent>`
   animation-duration: ${(props) => props.delay || "1s"};
   animation-name: ${flipInXAnimation};
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: flex-start;
   width: 100px;
@@ -30,19 +28,13 @@ const ToolsCard = styled.div<IToolsComponent>`
   margin-top: 8px;
   border-bottom: 1px solid ${(props) => props.theme.backgroundNav};
   padding-bottom: 8px;
-  width: 30%;
-  /* margin: 16px;
-  padding: 16px; */
-  /* border-radius: 8px; */
-  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  width: 50%;
+  white-space: nowrap;
+  color: ${(props) => props.theme.colorMain};
   img {
     width: 32px;
     height: 32px;
     margin-right: 16px;
-  }
-  .tool-card-info {
-    /* font-family: "Georama", sans-serif; */
-    /* margin-top: 16px; */
-    white-space: nowrap;
+    padding-left: 16px;
   }
 `;

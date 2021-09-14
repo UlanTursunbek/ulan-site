@@ -1,83 +1,131 @@
-import styled, { keyframes } from "styled-components";
-import { bounceInDown } from "react-animations";
+import { useState } from "react";
+import styled from "styled-components";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { device } from "../constants";
-const bounceInDownAnimation = keyframes`${bounceInDown}`;
+import { bounceInDownAnimation } from "./styled";
+import { useCallback } from "react";
 
 const Contacts = () => {
+  const [showTooltip, setShowTooltip] = useState<string>("");
+  const onMouseEnter = useCallback(
+    (text: string) => setShowTooltip(text),
+    [showTooltip]
+  );
+  const onMouseLeave = useCallback(() => setShowTooltip(""), [showTooltip]);
+
   return (
     <StyledContactsContainer>
-      <StyledContactsButtons>
-        <button type="button">
-          <FaWhatsapp /> <span>+7 771 864 90 90</span>
-        </button>
-        <button type="button">
-          <FaTelegramPlane /> <span>+7 771 864 90 90 | @ruganga</span>
-        </button>
-        <button type="button">
-          <FaEnvelope /> <span>ulantursunbekdev@gmail.com</span>
-        </button>
-        <button type="button">
-          <FaLinkedinIn />{" "}
-          <span>https://www.linkedin.com/in/ulantursunbekuulu</span>
-        </button>
-        <button type="button">
-          <FaGithub /> <span>https://github.com/UlanTursunbek</span>
-        </button>
-      </StyledContactsButtons>
+      <StyledContactsLinks>
+        {showTooltip && <div className="notification">{showTooltip}</div>}
+        <a
+          href="https://wa.me/+77718649090?text=Hi! I'm writing you from your site"
+          rel="noreferrer"
+          className="contact-link"
+          target="_blank"
+          onMouseEnter={() =>
+            onMouseEnter("click to write message via whatsapp")
+          }
+          onMouseLeave={onMouseLeave}
+        >
+          <FaWhatsapp /> +7 771 864 90 90
+        </a>
+        <a
+          href="https://telegram.me/ruganga?text=Hi! I'm writing you from your site"
+          rel="noreferrer"
+          target="_blank"
+          className="contact-link"
+          onMouseEnter={() =>
+            onMouseEnter("click to write message in telegram")
+          }
+          onMouseLeave={onMouseLeave}
+        >
+          <FaTelegramPlane /> +7 771 864 90 90 | @ruganga
+        </a>
+        <a
+          href="mailto:ulantursunbekdev@gmail.com"
+          rel="noreferrer"
+          target="_blank"
+          className="contact-link"
+          onMouseEnter={() => onMouseEnter("click to write an email")}
+          onMouseLeave={onMouseLeave}
+        >
+          <FaEnvelope /> ulantursunbekdev@gmail.com
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ulantursunbekuulu/"
+          rel="noreferrer"
+          target="_blank"
+          className="contact-link"
+          onMouseEnter={() =>
+            onMouseEnter("click to connect with me in Linkedin")
+          }
+          onMouseLeave={onMouseLeave}
+        >
+          <FaLinkedinIn />
+          https://www.linkedin.com/in/ulantursunbekuulu
+        </a>
+        <a
+          href="https://github.com/UlanTursunbek"
+          className="contact-link"
+          rel="noreferrer"
+          target="_blank"
+          onMouseEnter={() =>
+            onMouseEnter("click to see my latest projects code")
+          }
+          onMouseLeave={onMouseLeave}
+        >
+          <FaGithub /> https://github.com/UlanTursunbek
+        </a>
+      </StyledContactsLinks>
     </StyledContactsContainer>
   );
 };
 
 export default Contacts;
 
-const StyledContactsButtons = styled.div`
+const StyledContactsLinks = styled.div`
   animation-duration: 1.5s;
   animation-name: ${bounceInDownAnimation};
-  /* width: 100%; */
   height: 100%;
-  /* margin-left: 40%; */
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   transition: all 1s;
   color: ${(props) => props.theme.colorMain};
-  button {
-    margin: 8px 0;
-    border-style: none;
-    background-color: transparent;
-    font-size: 32px;
-    color: ${(props) => props.theme.colorMain};
-
+  font-family: "Georama", sans-serif;
+  .notification {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    animation-duration: 0.5s;
+    animation-name: ${bounceInDownAnimation};
+    background-color: ${(props) => props.theme.hoverBackground};
+    color: ${(props) => props.theme.colorText};
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
-    height: 48px;
+  }
+  .contact-link {
+    color: ${(props) => props.theme.colorMain};
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    margin-top: 16px;
+    font-size: 24px;
     @media ${device.tablet} {
       font-size: 16px;
     }
-    span {
-      position: relative;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 24px;
-    }
-    &:hover {
-      transition: all 1s;
-      color: ${(props) => props.theme.hoverColor};
-      background-color: ${(props) => props.theme.hoverBackground};
-      span {
-        transition: all 1s;
-        color: ${(props) => props.theme.hoverColor};
-      }
+    svg {
+      margin-right: 8px;
     }
   }
 `;
