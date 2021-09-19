@@ -1,85 +1,33 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaTelegramPlane } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { device } from "../constants";
+import { contactLinks, device } from "../constants";
 import { bounceInDownAnimation } from "./styled";
-import { useCallback } from "react";
 
 const Contacts = () => {
   const [showTooltip, setShowTooltip] = useState<string>("");
-  const onMouseEnter = useCallback(
-    (text: string) => setShowTooltip(text),
-    [showTooltip]
-  );
-  const onMouseLeave = useCallback(() => setShowTooltip(""), [showTooltip]);
+  const onMouseEnter = (text: string) => setShowTooltip(text);
+  const onMouseLeave = () => setShowTooltip("");
 
   return (
     <StyledContactsContainer>
       <StyledContactsLinks>
         {showTooltip && <div className="notification">{showTooltip}</div>}
-        <a
-          href="https://wa.me/+77718649090?text=Hi! I'm writing you from your site"
-          rel="noreferrer"
-          className="contact-link"
-          target="_blank"
-          onMouseEnter={() =>
-            onMouseEnter("click to write message via whatsapp")
-          }
-          onMouseLeave={onMouseLeave}
-        >
-          <FaWhatsapp /> +7 771 864 90 90
-        </a>
-        <a
-          href="https://telegram.me/ruganga?text=Hi! I'm writing you from your site"
-          rel="noreferrer"
-          target="_blank"
-          className="contact-link"
-          onMouseEnter={() =>
-            onMouseEnter("click to write message in telegram")
-          }
-          onMouseLeave={onMouseLeave}
-        >
-          <FaTelegramPlane /> +7 771 864 90 90 | @ruganga
-        </a>
-        <a
-          href="mailto:ulantursunbekdev@gmail.com"
-          rel="noreferrer"
-          target="_blank"
-          className="contact-link"
-          onMouseEnter={() => onMouseEnter("click to write an email")}
-          onMouseLeave={onMouseLeave}
-        >
-          <FaEnvelope /> ulantursunbekdev@gmail.com
-        </a>
-        <a
-          href="https://www.linkedin.com/in/ulantursunbekuulu/"
-          rel="noreferrer"
-          target="_blank"
-          className="contact-link"
-          onMouseEnter={() =>
-            onMouseEnter("click to connect with me in Linkedin")
-          }
-          onMouseLeave={onMouseLeave}
-        >
-          <FaLinkedinIn />
-          https://www.linkedin.com/in/ulantursunbekuulu
-        </a>
-        <a
-          href="https://github.com/UlanTursunbek"
-          className="contact-link"
-          rel="noreferrer"
-          target="_blank"
-          onMouseEnter={() =>
-            onMouseEnter("click to see my latest projects code")
-          }
-          onMouseLeave={onMouseLeave}
-        >
-          <FaGithub /> https://github.com/UlanTursunbek
-        </a>
+        {contactLinks.map(it => {
+          return (
+            <a
+              href={it.url}
+              rel="noreferrer"
+              className="contact-link"
+              target="_blank"
+              onMouseEnter={() =>
+                onMouseEnter(it.notificationText)
+              }
+              onMouseLeave={onMouseLeave}
+            >
+              <it.icon /> {it.linkText}
+            </a>
+          );
+        }) }
       </StyledContactsLinks>
     </StyledContactsContainer>
   );

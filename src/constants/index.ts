@@ -1,8 +1,13 @@
-import { IExperience, ITools, IColorsPallete } from "../components/types";
-import ImgJobKovan from "../static/jobKovan.png";
-import ImgJobSkillCrucial from "../static/jobSkillCrucial.png";
-import ImgJobArgenta from "../static/jobArgenta.png";
-import ImgJobRekom from "../static/jobRekom.png";
+import {
+  IExperience,
+  ITools,
+  IColorsPallete,
+  ILinks,
+} from "../components/types";
+import ImgJobKovan from "../static/imagesPNG/jobKovan.png";
+import ImgJobSkillCrucial from "../static/imagesPNG/jobSkillCrucial.png";
+import ImgJobArgenta from "../static/imagesPNG/jobArgenta.png";
+import ImgJobRekom from "../static/imagesPNG/jobRekom.png";
 import logoReact from "../static/logos/logoReact.svg";
 import logoCSS from "../static/logos/logoCSS.svg";
 import logoGIT from "../static/logos/logoGIT.svg";
@@ -15,8 +20,13 @@ import logoRedux from "../static/logos/logoRedux.svg";
 import logoSASS from "../static/logos/logoSASS.svg";
 import logoTypescript from "../static/logos/logoTypescript.svg";
 import logoNode from "../static/logos/logoNode.svg";
-
-
+import {
+  FaWhatsapp,
+  FaTelegramPlane,
+  FaEnvelope,
+  FaLinkedinIn,
+  FaGithub,
+} from "react-icons/fa";
 
 export const routes = {
   ABOUT: "ABOUT",
@@ -168,11 +178,7 @@ export const darkTheme = {
   hoverColor: colorsPallete.aliceBlue,
 };
 
-export const navLinks = [
-  "experience",
-  "tools",
-  "contacts"
-]
+export const navLinks = ["experience", "tools", "contacts"];
 
 const size = {
   mobileS: "320px",
@@ -194,3 +200,36 @@ export const device = {
   desktop: `(max-width: ${size.desktop})`,
   desktopL: `(max-width: ${size.desktop})`,
 };
+
+export const contactLinks: ILinks[] = [
+  {
+    url: "https://wa.me/+77718649090?text=Hi! I'm writing you from your site",
+    notificationText: "click to write message via whatsapp",
+    linkText: "+7 771 864 90 90",
+    icon: FaWhatsapp,
+  },
+  {
+    url: "https://telegram.me/ruganga?text=Hi! I'm writing you from your site",
+    notificationText: "click to write message in telegram",
+    linkText: "+7 771 864 90 90 | @ruganga",
+    icon: FaTelegramPlane,
+  },
+  {
+    url: "mailto:ulantursunbekdev@gmail.com",
+    notificationText: "click to write an email",
+    linkText: "ulantursunbekdev@gmail.com",
+    icon: FaEnvelope,
+  },
+  {
+    url: "https://www.linkedin.com/in/ulantursunbekuulu/",
+    notificationText: "click to connect with me in Linkedin",
+    linkText: "https://www.linkedin.com/in/ulantursunbekuulu",
+    icon: FaLinkedinIn,
+  },
+  {
+    url: "https://github.com/UlanTursunbek",
+    notificationText: "click to see my latest projects code",
+    linkText: "https://github.com/UlanTursunbek",
+    icon: FaGithub,
+  },
+];

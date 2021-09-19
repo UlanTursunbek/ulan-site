@@ -1,12 +1,12 @@
+import styled, { keyframes } from "styled-components";
+import { bounceInLeft } from "react-animations";
+import axios from "axios";
+import fileDownload from "js-file-download";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { selectTheme, setTheme } from "../store/sampleReducer";
 import { device, navLinks } from "../constants/index";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
-import { bounceInLeft } from "react-animations";
-// import resume_PDF from '../../public/FE_ULAN.pdf';
-
 const bounceInLeftAnimation = keyframes`${bounceInLeft}`;
 
 const NavBar = () => {
@@ -15,6 +15,16 @@ const NavBar = () => {
 
   const handleToggleTheme = () => {
     dispatch(setTheme(theme === "light" ? "dark" : "light"));
+  };
+
+  const handleDownload = (url: string, filename: string) => {
+    axios
+      .get(url, {
+        responseType: "blob",
+      })
+      .then((res) => {
+        fileDownload(res.data, filename);
+      });
   };
 
   return (
@@ -41,16 +51,15 @@ const NavBar = () => {
       <button type="button" className="nav-btn" onClick={handleToggleTheme}>
         {theme === "light" ? <FaMoon /> : <FaSun />}
       </button>
-      <a
-        href={"../FE_ULAN.pdf"}
-        rel="noreferrer"
+      <button
+        type="button"
         className="nav-btn"
-        target="_blank"
-        download
+        onClick={() =>
+          handleDownload(`${process.env.PUBLIC_URL}/FE_Ulan.pdf`, "FE_Ulan.pdf")
+        }
       >
-        {/* <a href={agent_file} download="MANIFEST.txt"></a> */}
         resume
-      </a>
+      </button>
     </NavigationContainer>
   );
 };
@@ -65,7 +74,7 @@ const NavigationContainer = styled.nav`
   align-items: center;
 
   width: 100%;
-  height: 38px;
+  height: 48px;
   animation-duration: 1s;
   animation-name: ${bounceInLeftAnimation};
   font-family: Bebas Neue;
@@ -74,16 +83,16 @@ const NavigationContainer = styled.nav`
     font-size: 32px;
     position: relative;
     z-index: 10;
-    padding: 8px 16px;
+    padding: 0px 16px;
     background: ${(props) => props.theme.colorMain};
     color: ${(props) => props.theme.colorText};
     text-decoration: none;
     transition: all ease-in 0.2s;
+    height: 100%;
+    display: flex;
+    align-items: center;
     &-active {
       background-color: ${(props) => props.theme.hoverBackground};
-    }
-    @media ${device.tablet} {
-      padding: 8px 10px;
     }
     &:hover {
       background-color: ${(props) => props.theme.hoverBackground};
@@ -106,6 +115,10 @@ const NavigationContainer = styled.nav`
     padding: 16px;
     text-decoration: none;
     transition: all ease-in 0.2s;
+    cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 16px;
+
     &-active {
       background-color: ${(props) => props.theme.hoverBackground};
     }

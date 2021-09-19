@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Typewriter from "typewriter-effect";
 import styled from "styled-components";
-import AvatarUlan from "../static/avatarUlan.png";
+import AvatarUlan from "../static/imagesPNG/avatarUlan.png";
 import { device } from "../constants";
 import { bounceInRightAnimation } from "./styled";
 

@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 export interface IExperience {
   title: string;
   work: string[];
@@ -21,5 +23,12 @@ export interface IColorsPallete {
   imperialRed: string;
   amanarathRed: string;
   slateGray: string;
+}
+
+export interface ILinks {
+  url: string;
+  notificationText: string;
+  linkText: string;
+  icon: IconType;
 }
 
