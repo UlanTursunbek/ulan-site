@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ulan-site/static/css/main.eedb50b8.chunk.css",
-    "main.js": "/ulan-site/static/js/main.2f85c1da.chunk.js",
-    "main.js.map": "/ulan-site/static/js/main.2f85c1da.chunk.js.map",
-    "runtime-main.js": "/ulan-site/static/js/runtime-main.e4cd3374.js",
-    "runtime-main.js.map": "/ulan-site/static/js/runtime-main.e4cd3374.js.map",
-    "static/js/2.9d4edf81.chunk.js": "/ulan-site/static/js/2.9d4edf81.chunk.js",
-    "static/js/2.9d4edf81.chunk.js.map": "/ulan-site/static/js/2.9d4edf81.chunk.js.map",
-    "static/js/3.1b5b1b64.chunk.js": "/ulan-site/static/js/3.1b5b1b64.chunk.js",
-    "static/js/3.1b5b1b64.chunk.js.map": "/ulan-site/static/js/3.1b5b1b64.chunk.js.map",
+    "main.js": "/ulan-site/static/js/main.ab92d26a.chunk.js",
+    "main.js.map": "/ulan-site/static/js/main.ab92d26a.chunk.js.map",
+    "runtime-main.js": "/ulan-site/static/js/runtime-main.d3923fc9.js",
+    "runtime-main.js.map": "/ulan-site/static/js/runtime-main.d3923fc9.js.map",
+    "static/js/2.c525fa9e.chunk.js": "/ulan-site/static/js/2.c525fa9e.chunk.js",
+    "static/js/2.c525fa9e.chunk.js.map": "/ulan-site/static/js/2.c525fa9e.chunk.js.map",
+    "static/js/3.b5990a49.chunk.js": "/ulan-site/static/js/3.b5990a49.chunk.js",
+    "static/js/3.b5990a49.chunk.js.map": "/ulan-site/static/js/3.b5990a49.chunk.js.map",
     "index.html": "/ulan-site/index.html",
     "static/css/main.eedb50b8.chunk.css.map": "/ulan-site/static/css/main.eedb50b8.chunk.css.map",
-    "static/js/2.9d4edf81.chunk.js.LICENSE.txt": "/ulan-site/static/js/2.9d4edf81.chunk.js.LICENSE.txt",
+    "static/js/2.c525fa9e.chunk.js.LICENSE.txt": "/ulan-site/static/js/2.c525fa9e.chunk.js.LICENSE.txt",
     "static/media/avatarUlan.d721732c.png": "/ulan-site/static/media/avatarUlan.d721732c.png",
     "static/media/jobArgenta.8b706763.png": "/ulan-site/static/media/jobArgenta.8b706763.png",
     "static/media/jobKovan.f11daaa9.png": "/ulan-site/static/media/jobKovan.f11daaa9.png",
@@ -31,9 +31,9 @@
     "static/media/logoTypescript.7f228a7b.svg": "/ulan-site/static/media/logoTypescript.7f228a7b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e4cd3374.js",
-    "static/js/2.9d4edf81.chunk.js",
+    "static/js/runtime-main.d3923fc9.js",
+    "static/js/2.c525fa9e.chunk.js",
     "static/css/main.eedb50b8.chunk.css",
-    "static/js/main.2f85c1da.chunk.js"
+    "static/js/main.ab92d26a.chunk.js"
   ]
 }
